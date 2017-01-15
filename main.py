@@ -18,9 +18,11 @@ def hello2():
     """Return a friendly HTTP greeting."""
 
     data = {}
-    data['key'] = 'value'
-    data['Hello'] = 'ciao'
-    data['Hello2'] = 'ciao2'
+    courses = {}
+    courses["001"] = "Advanced Topics of Software engineering"
+    courses["002"] = "Artificial Intelligence"
+    courses["003"] = "Machine Learning"
+    data['courses'] = courses
     json_data = json.dumps(data)
 
     return json_data
