@@ -11,6 +11,11 @@ def hello():
     """Return a friendly HTTP greeting."""
     return 'Hello World!'
 
+@app.route('/login')
+def hello():
+    """Return a friendly HTTP greeting."""
+    return 'LOGIN!'
+
 
 @app.errorhandler(404)
 def page_not_found(e):
