@@ -17,13 +17,23 @@ def hello():
 def hello2():
     """Return a friendly HTTP greeting."""
 
-    data = {}
-    courses = {}
-    courses["001"] = "Advanced Topics of Software engineering"
-    courses["002"] = "Artificial Intelligence"
-    courses["003"] = "Machine Learning"
-    data['courses'] = courses
-    json_data = json.dumps(data)
+    courses = []
+    ob1 = {}
+    ob1["id"] = "001"
+    ob1["name"] = "Advanced Topics of Software engineering"
+    courses.append(ob1)
+
+    ob2 = {}
+    ob2["id"] = "002"
+    ob2["name"] = "Artificial Intelligence"
+    courses.append(ob2)
+
+    ob3 = {}
+    ob3["id"] = "003"
+    ob3["name"] = "Machine Learning"
+    courses.append(ob3)
+
+    json_data = json.dumps(courses)
 
     return json_data
 
