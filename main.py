@@ -2,6 +2,8 @@ from flask import Flask
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
+import json
+
 # Note: We don't need to call run() since our application is embedded within
 # the App Engine WSGI application server.
 
@@ -11,10 +13,17 @@ def hello():
     """Return a friendly HTTP greeting."""
     return 'Hello World!'
 
-@app.route('/login')
-def hello():
+@app.route('/courses')
+def hello2():
     """Return a friendly HTTP greeting."""
-    return 'LOGIN!'
+
+    data = {}
+    data['key'] = 'value'
+    data['Hello'] = 'ciao'
+    data['Hello2'] = 'ciao2'
+    json_data = json.dumps(data)
+
+    return json_data
 
 
 @app.errorhandler(404)
